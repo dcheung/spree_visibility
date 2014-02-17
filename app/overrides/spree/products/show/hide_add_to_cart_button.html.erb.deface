@@ -1,0 +1,6 @@
+<!-- insert_bottom '[data-hook=product_show]' -->
+<% unless @product.visible  %>
+  <%= javascript_tag do  %>
+    $('.add-to-cart').hide()
+  <% end  %>
+<% end  %>
