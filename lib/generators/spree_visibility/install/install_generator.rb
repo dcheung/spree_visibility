@@ -5,13 +5,13 @@ module SpreeVisibility
       class_option :auto_run_migrations, :type => :boolean, :default => false
 
       def add_javascripts
-        append_file 'vendor/assets/javascripts/spree/frontend/all.js', "//= require frontend/spree_visibility\n"
-        append_file 'vendor/assets/javascripts/spree/backend/all.js', "//= require backend/spree_visibility\n"
+        append_file 'vendor/assets/javascripts/spree/frontend/all.js', "//= require spree/frontend/spree_visibility\n"
+        append_file 'vendor/assets/javascripts/spree/backend/all.js', "//= require spree/backend/spree_visibility\n"
       end
 
       def add_stylesheets
-        inject_into_file 'vendor/assets/stylesheets/spree/frontend/all.css', " *= require frontend/spree_visibility\n", :before => /\*\//, :verbose => true
-        inject_into_file 'vendor/assets/stylesheets/spree/backend/all.css', " *= require backend/spree_visibility\n", :before => /\*\//, :verbose => true
+        inject_into_file 'vendor/assets/stylesheets/spree/frontend/all.css', " *= require spree/frontend/spree_visibility\n", :before => /\*\//, :verbose => true
+        inject_into_file 'vendor/assets/stylesheets/spree/backend/all.css', " *= require spree/backend/spree_visibility\n", :before => /\*\//, :verbose => true
       end
 
       def add_migrations
